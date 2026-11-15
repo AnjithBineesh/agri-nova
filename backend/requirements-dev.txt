@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8
+# Only needed to rebuild app/agriculture/data/crops.json from the FAO ECOCROP dataset
+rdata>=0.11

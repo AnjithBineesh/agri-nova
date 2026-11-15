@@ -1,0 +1,2 @@
+# S3-compatible object storage for uploaded reports (STORAGE_BACKEND=s3)
+boto3>=1.34

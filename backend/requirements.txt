@@ -1,0 +1,22 @@
+# Agri Nova backend – Python 3.11+
+fastapi>=0.115
+uvicorn[standard]>=0.30
+SQLAlchemy>=2.0
+pydantic>=2.7
+pydantic-settings>=2.3
+email-validator>=2.1
+PyJWT>=2.8
+bcrypt>=4.1
+python-multipart>=0.0.9
+httpx>=0.27
+reportlab>=4.2
+pypdf>=4.2
+pypdfium2>=4.30
+pillow>=10.3
+psycopg[binary]>=3.1   # PostgreSQL / PostGIS driver (not needed for SQLite development)
+# Machine learning (crop prediction models). Models saved with this exact version load directly;
+# with any other version the backend refits the selected models on startup (a few seconds).
+scikit-learn==1.9.1
+pandas>=2.2
+numpy>=1.26
+joblib>=1.4

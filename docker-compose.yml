@@ -1,0 +1,35 @@
+# Production-like stack: PostGIS + FastAPI + Next.js.
+# Copy backend/.env.example to backend/.env and set JWT_SECRET_KEY and Earthdata credentials first.
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_DB: agrinova
+      POSTGRES_USER: agrinova
+      POSTGRES_PASSWORD: agrinova
+    volumes: [dbdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agrinova"]
+      interval: 5s
+      retries: 10
+  backend:
+    build: ./backend
+    env_file: ./backend/.env
+    environment:
+      DATABASE_URL: postgresql+psycopg://agrinova:agrinova@db:5432/agrinova
+      USE_POSTGIS: "true"
+      ENVIRONMENT: production
+      CORS_ORIGINS: http://localhost:3000
+    volumes: [storage:/data/storage]
+    depends_on:
+      db: { condition: service_healthy }
+    ports: ["8000:8000"]
+  frontend:
+    build:
+      context: ./frontend
+      args: { BACKEND_URL: "http://backend:8000" }
+    depends_on: [backend]
+    ports: ["3000:3000"]
+volumes:
+  dbdata:
+  storage:

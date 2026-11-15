@@ -1,0 +1,2841 @@
+{
+  "version": "1.0",
+  "sources": {
+    "ecocrop": "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+    "fao56": "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+    "fao_iwm3": "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+    "indicative": "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+  },
+  "crops": [
+    {
+      "slug": "rice",
+      "crop_name": "Rice (paddy)",
+      "scientific_name": "Oryza sativa L. s. japonica",
+      "crop_family": "Poaceae",
+      "category": "cereal",
+      "duration": {
+        "typical_days": 120,
+        "ecocrop_min_days": 80,
+        "ecocrop_max_days": 180
+      },
+      "planting_season": "Warm, wet season; requires assured water for puddled cultivation",
+      "harvest_period": "About 120 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 10.0,
+          "optimal_min": 20.0,
+          "optimal_max": 30.0,
+          "absolute_max": 36.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 1000.0,
+          "optimal_min": 1500.0,
+          "optimal_max": 2000.0,
+          "absolute_max": 4000.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 450,
+          "max": 700
+        },
+        "kc": {
+          "ini": 1.05,
+          "mid": 1.2,
+          "end": 0.9
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": true
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.5,
+          "optimal_max": 7.0,
+          "absolute_max": 9.0
+        },
+        "texture_optimal": [
+          "wide"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "imperfectly"
+        ],
+        "drainage_range": [
+          "imperfectly"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 11,
+          "P2O5": 5,
+          "K2O": 3
+        },
+        "nitrogen_demand": "medium",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 4.5,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.5,
+          "max": 1.0
+        },
+        "depth_class": "medium",
+        "type": "fibrous",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.5,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Tolerates flooded soils",
+          "Large residue biomass when straw is retained"
+        ],
+        "min_break_seasons_same_crop": 0,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Blast and sheath blight build-up under continuous rice",
+        "Stem borers carry over in stubble"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Rice paddy (Japonica)"
+    },
+    {
+      "slug": "maize",
+      "crop_name": "Maize",
+      "scientific_name": "Zea mays L. s. mays",
+      "crop_family": "Poaceae",
+      "category": "cereal",
+      "duration": {
+        "typical_days": 110,
+        "ecocrop_min_days": 65,
+        "ecocrop_max_days": 365
+      },
+      "planting_season": "Warm season; sensitive to drought at tasselling/silking",
+      "harvest_period": "About 110 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 10.0,
+          "optimal_min": 18.0,
+          "optimal_max": 33.0,
+          "absolute_max": 47.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 400.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1200.0,
+          "absolute_max": 1800.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 500,
+          "max": 800
+        },
+        "kc": {
+          "ini": 0.3,
+          "mid": 1.2,
+          "end": 0.5
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.0,
+          "optimal_max": 7.0,
+          "absolute_max": 8.5
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 15,
+          "P2O5": 6.5,
+          "K2O": 4.5
+        },
+        "nitrogen_demand": "high",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 5.5,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 1.7
+        },
+        "depth_class": "deep",
+        "type": "fibrous",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.5,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "High residue carbon input when stover is retained",
+          "Deep fibrous root system"
+        ],
+        "min_break_seasons_same_crop": 0,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Continuous maize favours leaf blights, stalk rots and stem borers",
+        "Fall armyworm pressure in many tropical regions"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Maize"
+    },
+    {
+      "slug": "wheat",
+      "crop_name": "Wheat",
+      "scientific_name": "Triticum aestivum L.",
+      "crop_family": "Poaceae",
+      "category": "cereal",
+      "duration": {
+        "typical_days": 120,
+        "ecocrop_min_days": 90,
+        "ecocrop_max_days": 250
+      },
+      "planting_season": "Cool season; terminal heat above ~30 °C during grain fill reduces yield",
+      "harvest_period": "About 120 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 5.0,
+          "optimal_min": 15.0,
+          "optimal_max": 23.0,
+          "absolute_max": 27.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 300.0,
+          "optimal_min": 750.0,
+          "optimal_max": 900.0,
+          "absolute_max": 1600.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 450,
+          "max": 650
+        },
+        "kc": {
+          "ini": 0.3,
+          "mid": 1.15,
+          "end": 0.3
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.5,
+          "optimal_min": 6.0,
+          "optimal_max": 7.0,
+          "absolute_max": 8.5
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "medium",
+          "heavy"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 21,
+          "P2O5": 8,
+          "K2O": 5
+        },
+        "nitrogen_demand": "high",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 3.5,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 1.8
+        },
+        "depth_class": "deep",
+        "type": "fibrous",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.5,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Cool-season cereal that breaks warm-season pest cycles"
+        ],
+        "min_break_seasons_same_crop": 0,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Take-all and leaf rusts increase with cereal-after-cereal"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Wheat, common"
+    },
+    {
+      "slug": "sorghum",
+      "crop_name": "Sorghum",
+      "scientific_name": "Sorghum bicolor (L.) Moench",
+      "crop_family": "Poaceae",
+      "category": "cereal",
+      "duration": {
+        "typical_days": 110,
+        "ecocrop_min_days": 90,
+        "ecocrop_max_days": 300
+      },
+      "planting_season": "Warm season; tolerates intermittent drought",
+      "harvest_period": "About 110 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 8.0,
+          "optimal_min": 27.0,
+          "optimal_max": 35.0,
+          "absolute_max": 40.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 300.0,
+          "optimal_min": 500.0,
+          "optimal_max": 1000.0,
+          "absolute_max": 3000.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 450,
+          "max": 650
+        },
+        "kc": {
+          "ini": 0.3,
+          "mid": 1.05,
+          "end": 0.55
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.0,
+          "optimal_min": 6.0,
+          "optimal_max": 7.0,
+          "absolute_max": 8.5
+        },
+        "texture_optimal": [
+          "medium",
+          "heavy"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "imperfectly",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 16,
+          "P2O5": 7,
+          "K2O": 4.5
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.5,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 2.0
+        },
+        "depth_class": "deep",
+        "type": "fibrous",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 2.0,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Drought tolerant",
+          "Deep roots scavenge subsoil nutrients"
+        ],
+        "min_break_seasons_same_crop": 0,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Shoot fly and grain mould in humid conditions"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Sorghum (low altitude)"
+    },
+    {
+      "slug": "pearl_millet",
+      "crop_name": "Pearl millet",
+      "scientific_name": "Pennisetum glaucum (L)R.Br.",
+      "crop_family": "Poaceae",
+      "category": "cereal",
+      "duration": {
+        "typical_days": 85,
+        "ecocrop_min_days": 60,
+        "ecocrop_max_days": 120
+      },
+      "planting_season": "Warm, semi-arid season; suited to light soils",
+      "harvest_period": "About 85 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 12.0,
+          "optimal_min": 25.0,
+          "optimal_max": 35.0,
+          "absolute_max": 40.0
+        },
+        "killing_temperature_c": 2.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 200.0,
+          "optimal_min": 400.0,
+          "optimal_max": 900.0,
+          "absolute_max": 1700.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 450,
+          "max": 650
+        },
+        "kc": {
+          "ini": 0.3,
+          "mid": 1.0,
+          "end": 0.3
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.0,
+          "optimal_max": 6.5,
+          "absolute_max": 8.3
+        },
+        "texture_optimal": [
+          "light",
+          "medium"
+        ],
+        "texture_range": [
+          "light",
+          "medium"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 18,
+          "P2O5": 7,
+          "K2O": 5
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.2,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 2.0
+        },
+        "depth_class": "deep",
+        "type": "fibrous",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 2.0,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Among the most drought- and heat-tolerant cereals",
+          "Short duration"
+        ],
+        "min_break_seasons_same_crop": 0,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Downy mildew where grown repeatedly"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Pearl millet"
+    },
+    {
+      "slug": "finger_millet",
+      "crop_name": "Finger millet",
+      "scientific_name": "Eleusine coracana (L)Gaertn",
+      "crop_family": "Poaceae",
+      "category": "cereal",
+      "duration": {
+        "typical_days": 110,
+        "ecocrop_min_days": 75,
+        "ecocrop_max_days": 180
+      },
+      "planting_season": "Warm season, moderate rainfall",
+      "harvest_period": "About 110 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 8.0,
+          "optimal_min": 18.0,
+          "optimal_max": 27.0,
+          "absolute_max": 35.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 600.0,
+          "optimal_min": 800.0,
+          "optimal_max": 1100.0,
+          "absolute_max": 4300.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 450,
+          "max": 650
+        },
+        "kc": {
+          "ini": 0.3,
+          "mid": 1.0,
+          "end": 0.3
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.5,
+          "optimal_min": 6.0,
+          "optimal_max": 6.5,
+          "absolute_max": 7.5
+        },
+        "texture_optimal": [
+          "medium"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 15,
+          "P2O5": 6,
+          "K2O": 5
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.5,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 2.0
+        },
+        "depth_class": "deep",
+        "type": "fibrous",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.8,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Tolerates low-fertility soils"
+        ],
+        "min_break_seasons_same_crop": 0,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Blast in humid seasons"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Finger millet"
+    },
+    {
+      "slug": "green_gram",
+      "crop_name": "Green gram (mung bean)",
+      "scientific_name": "Vigna radiata (L.) Wilczek",
+      "crop_family": "Fabaceae",
+      "category": "legume",
+      "duration": {
+        "typical_days": 70,
+        "ecocrop_min_days": 50,
+        "ecocrop_max_days": 120
+      },
+      "planting_season": "Warm season or short pre-/post-monsoon window",
+      "harvest_period": "About 70 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 8.0,
+          "optimal_min": 21.0,
+          "optimal_max": 36.0,
+          "absolute_max": 40.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 500.0,
+          "optimal_min": 650.0,
+          "optimal_max": 900.0,
+          "absolute_max": 1250.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 300,
+          "max": 500
+        },
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.05,
+          "end": 0.6
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.3,
+          "optimal_min": 5.5,
+          "optimal_max": 6.2,
+          "absolute_max": 8.3
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 40,
+          "P2O5": 9,
+          "K2O": 13
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 0.7,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.5,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 0,
+          "residue_retained": 15
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.6,
+          "max": 1.0
+        },
+        "depth_class": "medium",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.1,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Short duration fits between main crops",
+          "Biological N fixation"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Yellow mosaic virus (whitefly-vectored)",
+        "Root rots with consecutive pulses"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Mung bean"
+    },
+    {
+      "slug": "black_gram",
+      "crop_name": "Black gram (urd bean)",
+      "scientific_name": "Vigna mungo (L.) Hepper",
+      "crop_family": "Fabaceae",
+      "category": "legume",
+      "duration": {
+        "typical_days": 80,
+        "ecocrop_min_days": 60,
+        "ecocrop_max_days": 130
+      },
+      "planting_season": "Warm season; also grown on residual moisture after rice",
+      "harvest_period": "About 80 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 8.0,
+          "optimal_min": 22.0,
+          "optimal_max": 35.0,
+          "absolute_max": 40.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 530.0,
+          "optimal_min": 650.0,
+          "optimal_max": 900.0,
+          "absolute_max": 2430.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 300,
+          "max": 500
+        },
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.05,
+          "end": 0.6
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.5,
+          "optimal_max": 6.5,
+          "absolute_max": 7.5
+        },
+        "texture_optimal": [
+          "medium",
+          "heavy"
+        ],
+        "texture_range": [
+          "medium",
+          "heavy"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 40,
+          "P2O5": 9,
+          "K2O": 13
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 0.7,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.5,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 0,
+          "residue_retained": 15
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.6,
+          "max": 1.0
+        },
+        "depth_class": "medium",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.1,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Biological N fixation",
+          "Tolerates heavier soils than mung bean"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Yellow mosaic virus",
+        "Powdery mildew"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Urd bean"
+    },
+    {
+      "slug": "chickpea",
+      "crop_name": "Chickpea",
+      "scientific_name": "Cicer arietinum L.",
+      "crop_family": "Fabaceae",
+      "category": "legume",
+      "duration": {
+        "typical_days": 110,
+        "ecocrop_min_days": 90,
+        "ecocrop_max_days": 180
+      },
+      "planting_season": "Cool, dry season on residual moisture",
+      "harvest_period": "About 110 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 7.0,
+          "optimal_min": 15.0,
+          "optimal_max": 29.0,
+          "absolute_max": 35.0
+        },
+        "killing_temperature_c": -9.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 300.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1000.0,
+          "absolute_max": 1800.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 350,
+          "max": 500
+        },
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.0,
+          "end": 0.35
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.7,
+          "optimal_min": 6.0,
+          "optimal_max": 8.5,
+          "absolute_max": 9.5
+        },
+        "texture_optimal": [
+          "medium",
+          "heavy"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 35,
+          "P2O5": 8,
+          "K2O": 15
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.2,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.5,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 0,
+          "residue_retained": 15
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.6,
+          "max": 1.0
+        },
+        "depth_class": "medium",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.1,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Grown on stored soil moisture",
+          "Biological N fixation"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Fusarium wilt and Ascochyta blight build up with short rotations",
+        "Shares Sclerotinia with oilseed brassicas and sunflower"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Chick pea"
+    },
+    {
+      "slug": "soybean",
+      "crop_name": "Soybean",
+      "scientific_name": "Glycine max (L.) Merrill",
+      "crop_family": "Fabaceae",
+      "category": "legume",
+      "duration": {
+        "typical_days": 105,
+        "ecocrop_min_days": 75,
+        "ecocrop_max_days": 180
+      },
+      "planting_season": "Warm season",
+      "harvest_period": "About 105 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 10.0,
+          "optimal_min": 20.0,
+          "optimal_max": 33.0,
+          "absolute_max": 38.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 450.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1500.0,
+          "absolute_max": 1800.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 450,
+          "max": 700
+        },
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.15,
+          "end": 0.5
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.5,
+          "optimal_max": 6.5,
+          "absolute_max": 8.4
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "imperfectly",
+          "excessively"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 60,
+          "P2O5": 13,
+          "K2O": 20
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 2.5,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.6,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": -5,
+          "residue_retained": 10
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.6,
+          "max": 1.3
+        },
+        "depth_class": "medium",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.5,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Biological N fixation (high grain N removal limits net soil gain)"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Sclerotinia stem rot shared with sunflower and brassicas",
+        "Cyst nematode in short rotations"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Soyabean"
+    },
+    {
+      "slug": "cowpea",
+      "crop_name": "Cowpea",
+      "scientific_name": "Vigna unguiculata unguic. L",
+      "crop_family": "Fabaceae",
+      "category": "legume",
+      "duration": {
+        "typical_days": 80,
+        "ecocrop_min_days": 60,
+        "ecocrop_max_days": 240
+      },
+      "planting_season": "Warm season; tolerates low rainfall",
+      "harvest_period": "About 80 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 10.0,
+          "optimal_min": 20.0,
+          "optimal_max": 35.0,
+          "absolute_max": 40.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 400.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1500.0,
+          "absolute_max": 4100.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 300,
+          "max": 500
+        },
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.05,
+          "end": 0.6
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.3,
+          "optimal_min": 5.5,
+          "optimal_max": 7.5,
+          "absolute_max": 8.8
+        },
+        "texture_optimal": [
+          "medium"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 38,
+          "P2O5": 10,
+          "K2O": 15
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 0.8,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.6,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 0,
+          "residue_retained": 20
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.6,
+          "max": 1.0
+        },
+        "depth_class": "medium",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.2,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Drought tolerant legume",
+          "Good ground cover reduces erosion"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Root-knot nematodes",
+        "Aphid-borne mosaic viruses"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Cowpea"
+    },
+    {
+      "slug": "groundnut",
+      "crop_name": "Groundnut",
+      "scientific_name": "Arachis hypogaea L.",
+      "crop_family": "Fabaceae",
+      "category": "legume",
+      "duration": {
+        "typical_days": 115,
+        "ecocrop_min_days": 90,
+        "ecocrop_max_days": 150
+      },
+      "planting_season": "Warm season; prefers light, well-drained soils",
+      "harvest_period": "About 115 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 10.0,
+          "optimal_min": 22.0,
+          "optimal_max": 32.0,
+          "absolute_max": 45.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 400.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1500.0,
+          "absolute_max": 4000.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 500,
+          "max": 700
+        },
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.15,
+          "end": 0.6
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.5,
+          "optimal_max": 6.5,
+          "absolute_max": 8.5
+        },
+        "texture_optimal": [
+          "medium"
+        ],
+        "texture_range": [
+          "wide",
+          "organic"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 35,
+          "P2O5": 7,
+          "K2O": 10
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.8,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.6,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 0,
+          "residue_retained": 15
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.5,
+          "max": 1.0
+        },
+        "depth_class": "medium",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 2.0,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Biological N fixation",
+          "Haulms are valuable fodder"
+        ],
+        "min_break_seasons_same_crop": 2,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Leaf spots, stem rot and aflatoxin risk rise without a 2+ season break"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Groundnut"
+    },
+    {
+      "slug": "lentil",
+      "crop_name": "Lentil",
+      "scientific_name": "Lens culinaris Medikus",
+      "crop_family": "Fabaceae",
+      "category": "legume",
+      "duration": {
+        "typical_days": 110,
+        "ecocrop_min_days": 70,
+        "ecocrop_max_days": 240
+      },
+      "planting_season": "Cool season",
+      "harvest_period": "About 110 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 5.0,
+          "optimal_min": 15.0,
+          "optimal_max": 29.0,
+          "absolute_max": 32.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 250.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1000.0,
+          "absolute_max": 2500.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 350,
+          "max": 500
+        },
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.1,
+          "end": 0.3
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.5,
+          "optimal_max": 7.5,
+          "absolute_max": 8.2
+        },
+        "texture_optimal": [
+          "medium",
+          "heavy"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 40,
+          "P2O5": 10,
+          "K2O": 14
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.0,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.6,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 0,
+          "residue_retained": 15
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.6,
+          "max": 0.8
+        },
+        "depth_class": "shallow",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.2,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Cool-season legume with low water need"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Fusarium wilt with short legume rotations"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Lentil"
+    },
+    {
+      "slug": "pigeonpea",
+      "crop_name": "Pigeon pea",
+      "scientific_name": "Cajanus cajan (L.) Mill ssp",
+      "crop_family": "Fabaceae",
+      "category": "legume",
+      "duration": {
+        "typical_days": 180,
+        "ecocrop_min_days": 90,
+        "ecocrop_max_days": 365
+      },
+      "planting_season": "Long-duration warm-season crop",
+      "harvest_period": "About 180 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 10.0,
+          "optimal_min": 18.0,
+          "optimal_max": 38.0,
+          "absolute_max": 45.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 400.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1500.0,
+          "absolute_max": 4000.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": null,
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.05,
+          "end": 0.5
+        },
+        "kc_source": "assumed (generic legume values)",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.0,
+          "optimal_max": 7.0,
+          "absolute_max": 8.4
+        },
+        "texture_optimal": [
+          "light",
+          "medium"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "high"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 35,
+          "P2O5": 8,
+          "K2O": 14
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 0.9,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.6,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 5,
+          "residue_retained": 25
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.9,
+          "max": 1.5
+        },
+        "depth_class": "deep",
+        "type": "taproot",
+        "source": "assumed"
+      },
+      "residue": {
+        "residue_to_product_ratio": 2.5,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Deep taproot",
+          "Substantial leaf litter returns organic matter"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Fusarium wilt",
+        "Pod borers"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Pigeon Pea"
+    },
+    {
+      "slug": "sesame",
+      "crop_name": "Sesame",
+      "scientific_name": "Sesamum indicum L.",
+      "crop_family": "Pedaliaceae",
+      "category": "oilseed",
+      "duration": {
+        "typical_days": 90,
+        "ecocrop_min_days": 40,
+        "ecocrop_max_days": 180
+      },
+      "planting_season": "Warm season; sensitive to waterlogging",
+      "harvest_period": "About 90 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 10.0,
+          "optimal_min": 20.0,
+          "optimal_max": 30.0,
+          "absolute_max": 40.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 300.0,
+          "optimal_min": 500.0,
+          "optimal_max": 1000.0,
+          "absolute_max": 1500.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": null,
+        "kc": {
+          "ini": 0.35,
+          "mid": 1.1,
+          "end": 0.25
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.5,
+          "optimal_max": 7.5,
+          "absolute_max": 8.0
+        },
+        "texture_optimal": [
+          "medium"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 35,
+          "P2O5": 15,
+          "K2O": 10
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 0.5,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 1.5
+        },
+        "depth_class": "deep",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.5,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Low water requirement",
+          "Different family breaks cereal and legume pest cycles"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Phyllody and Macrophomina root rot"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Sesame seed"
+    },
+    {
+      "slug": "sunflower",
+      "crop_name": "Sunflower",
+      "scientific_name": "Helianthus annuus L v macro",
+      "crop_family": "Asteraceae",
+      "category": "oilseed",
+      "duration": {
+        "typical_days": 100,
+        "ecocrop_min_days": 70,
+        "ecocrop_max_days": 200
+      },
+      "planting_season": "Warm or mild season",
+      "harvest_period": "About 100 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 5.0,
+          "optimal_min": 17.0,
+          "optimal_max": 34.0,
+          "absolute_max": 45.0
+        },
+        "killing_temperature_c": -10.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 300.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1000.0,
+          "absolute_max": 1600.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 600,
+          "max": 1000
+        },
+        "kc": {
+          "ini": 0.35,
+          "mid": 1.05,
+          "end": 0.35
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.5,
+          "optimal_min": 6.0,
+          "optimal_max": 7.5,
+          "absolute_max": 8.0
+        },
+        "texture_optimal": [
+          "light",
+          "medium"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 25,
+          "P2O5": 11,
+          "K2O": 7
+        },
+        "nitrogen_demand": "medium",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.5,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.8,
+          "max": 1.5
+        },
+        "depth_class": "deep",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 2.0,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Deep taproot extracts subsoil water"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Sclerotinia shared with soybean, brassicas, chickpea"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Sunflower"
+    },
+    {
+      "slug": "mustard",
+      "crop_name": "Mustard (Indian/brown)",
+      "scientific_name": "Brassica juncea (L.) Czern.",
+      "crop_family": "Brassicaceae",
+      "category": "oilseed",
+      "duration": {
+        "typical_days": 110,
+        "ecocrop_min_days": 50,
+        "ecocrop_max_days": 100
+      },
+      "planting_season": "Cool season",
+      "harvest_period": "About 110 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 7.0,
+          "optimal_min": 15.0,
+          "optimal_max": 28.0,
+          "absolute_max": 40.0
+        },
+        "killing_temperature_c": -5.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 500.0,
+          "optimal_min": 700.0,
+          "optimal_max": 2400.0,
+          "absolute_max": 4200.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": null,
+        "kc": {
+          "ini": 0.35,
+          "mid": 1.05,
+          "end": 0.35
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.0,
+          "optimal_min": 5.5,
+          "optimal_max": 6.5,
+          "absolute_max": 8.0
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 32,
+          "P2O5": 14,
+          "K2O": 9
+        },
+        "nitrogen_demand": "medium",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.2,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 1.5
+        },
+        "depth_class": "deep",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.8,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Cool-season oilseed with modest water needs",
+          "Taproot improves soil structure"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 2
+      },
+      "pest_disease_considerations": [
+        "Alternaria blight, white rust; clubroot persists for years in soil",
+        "Shares Sclerotinia with sunflower and soybean"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Leaf mustard"
+    },
+    {
+      "slug": "cotton",
+      "crop_name": "Cotton",
+      "scientific_name": "Gossypium hirsutum L.",
+      "crop_family": "Malvaceae",
+      "category": "fibre",
+      "duration": {
+        "typical_days": 170,
+        "ecocrop_min_days": 150,
+        "ecocrop_max_days": 200
+      },
+      "planting_season": "Long warm season",
+      "harvest_period": "About 170 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 15.0,
+          "optimal_min": 22.0,
+          "optimal_max": 36.0,
+          "absolute_max": 42.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 450.0,
+          "optimal_min": 750.0,
+          "optimal_max": 1200.0,
+          "absolute_max": 1500.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 700,
+          "max": 1300
+        },
+        "kc": {
+          "ini": 0.35,
+          "mid": 1.18,
+          "end": 0.6
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.0,
+          "optimal_min": 6.0,
+          "optimal_max": 7.5,
+          "absolute_max": 9.5
+        },
+        "texture_optimal": [
+          "medium",
+          "heavy"
+        ],
+        "texture_range": [
+          "wide",
+          "organic"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 25,
+          "P2O5": 10,
+          "K2O": 13
+        },
+        "nitrogen_demand": "medium",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 1.8,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 1.7
+        },
+        "depth_class": "deep",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 3.0,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Deep taproot"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Pink bollworm and whitefly; Verticillium/Fusarium wilt in continuous cotton"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Cotton, American upland"
+    },
+    {
+      "slug": "sugarcane",
+      "crop_name": "Sugarcane",
+      "scientific_name": "Saccharum robustum Brandes",
+      "crop_family": "Poaceae",
+      "category": "cash",
+      "duration": {
+        "typical_days": 365,
+        "ecocrop_min_days": 300,
+        "ecocrop_max_days": 365
+      },
+      "planting_season": "Occupies the field for a full year or more",
+      "harvest_period": "About 365 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 15.0,
+          "optimal_min": 24.0,
+          "optimal_max": 30.0,
+          "absolute_max": 38.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 1100.0,
+          "optimal_min": 1400.0,
+          "optimal_max": 2500.0,
+          "absolute_max": 5000.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 1500,
+          "max": 2500
+        },
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.25,
+          "end": 0.75
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.5,
+          "optimal_min": 5.0,
+          "optimal_max": 6.0,
+          "absolute_max": 7.5
+        },
+        "texture_optimal": [
+          "medium",
+          "heavy"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "imperfectly"
+        ],
+        "drainage_range": [
+          "imperfectly",
+          "well"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 1.0,
+          "P2O5": 0.5,
+          "K2O": 1.5
+        },
+        "nitrogen_demand": "medium",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 70,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.2,
+          "max": 2.0
+        },
+        "depth_class": "deep",
+        "type": "fibrous",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 0.15,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Long ground cover"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 0
+      },
+      "pest_disease_considerations": [
+        "Red rot and smut carry over in ratoons"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Sugarcane"
+    },
+    {
+      "slug": "tomato",
+      "crop_name": "Tomato",
+      "scientific_name": "Lycopersicon esculentum M.",
+      "crop_family": "Solanaceae",
+      "category": "vegetable",
+      "duration": {
+        "typical_days": 120,
+        "ecocrop_min_days": 70,
+        "ecocrop_max_days": 150
+      },
+      "planting_season": "Mild season",
+      "harvest_period": "About 120 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 7.0,
+          "optimal_min": 20.0,
+          "optimal_max": 27.0,
+          "absolute_max": 35.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 400.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1300.0,
+          "absolute_max": 1800.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 400,
+          "max": 800
+        },
+        "kc": {
+          "ini": 0.6,
+          "mid": 1.15,
+          "end": 0.8
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.0,
+          "optimal_min": 5.5,
+          "optimal_max": 6.8,
+          "absolute_max": 7.5
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 1.6,
+          "P2O5": 0.6,
+          "K2O": 3.0
+        },
+        "nitrogen_demand": "medium",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 30,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.7,
+          "max": 1.5
+        },
+        "depth_class": "deep",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 0.1,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "High value where markets exist"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 4
+      },
+      "pest_disease_considerations": [
+        "Bacterial wilt, late blight and root-knot nematodes shared with potato"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Tomato"
+    },
+    {
+      "slug": "onion",
+      "crop_name": "Onion",
+      "scientific_name": "Allium cepa L. v cepa",
+      "crop_family": "Amaryllidaceae",
+      "category": "vegetable",
+      "duration": {
+        "typical_days": 130,
+        "ecocrop_min_days": 85,
+        "ecocrop_max_days": 175
+      },
+      "planting_season": "Cool, dry season",
+      "harvest_period": "About 130 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 4.0,
+          "optimal_min": 12.0,
+          "optimal_max": 25.0,
+          "absolute_max": 30.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 300.0,
+          "optimal_min": 350.0,
+          "optimal_max": 600.0,
+          "absolute_max": 2800.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 350,
+          "max": 550
+        },
+        "kc": {
+          "ini": 0.7,
+          "mid": 1.05,
+          "end": 0.75
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.3,
+          "optimal_min": 6.0,
+          "optimal_max": 7.0,
+          "absolute_max": 8.3
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 2.0,
+          "P2O5": 0.8,
+          "K2O": 2.0
+        },
+        "nitrogen_demand": "medium",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 20,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.3,
+          "max": 0.6
+        },
+        "depth_class": "shallow",
+        "type": "bulb/shallow fibrous",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 0.05,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Different family from most field crops"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 4
+      },
+      "pest_disease_considerations": [
+        "White rot and thrips"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Onion"
+    },
+    {
+      "slug": "cabbage",
+      "crop_name": "Cabbage",
+      "scientific_name": "Brassica oleracea L.v capi.",
+      "crop_family": "Brassicaceae",
+      "category": "vegetable",
+      "duration": {
+        "typical_days": 90,
+        "ecocrop_min_days": 60,
+        "ecocrop_max_days": 200
+      },
+      "planting_season": "Cool season",
+      "harvest_period": "About 90 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 7.0,
+          "optimal_min": 15.0,
+          "optimal_max": 24.0,
+          "absolute_max": 32.0
+        },
+        "killing_temperature_c": -10.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 300.0,
+          "optimal_min": 500.0,
+          "optimal_max": 1000.0,
+          "absolute_max": 2500.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 350,
+          "max": 500
+        },
+        "kc": {
+          "ini": 0.7,
+          "mid": 1.05,
+          "end": 0.95
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.0,
+          "optimal_min": 6.0,
+          "optimal_max": 7.5,
+          "absolute_max": 8.3
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well"
+        ],
+        "fertility_requirement": "high",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 2.5,
+          "P2O5": 0.8,
+          "K2O": 3.0
+        },
+        "nitrogen_demand": "high",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 30,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.5,
+          "max": 0.8
+        },
+        "depth_class": "shallow",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 0.2,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Short duration"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 4
+      },
+      "pest_disease_considerations": [
+        "Clubroot and black rot shared with mustard"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Cabbage"
+    },
+    {
+      "slug": "potato",
+      "crop_name": "Potato",
+      "scientific_name": "Solanum tuberosum L.",
+      "crop_family": "Solanaceae",
+      "category": "vegetable",
+      "duration": {
+        "typical_days": 105,
+        "ecocrop_min_days": 90,
+        "ecocrop_max_days": 160
+      },
+      "planting_season": "Cool season",
+      "harvest_period": "About 105 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 7.0,
+          "optimal_min": 15.0,
+          "optimal_max": 25.0,
+          "absolute_max": 30.0
+        },
+        "killing_temperature_c": -1.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 250.0,
+          "optimal_min": 500.0,
+          "optimal_max": 800.0,
+          "absolute_max": 2000.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": {
+          "min": 500,
+          "max": 700
+        },
+        "kc": {
+          "ini": 0.5,
+          "mid": 1.15,
+          "end": 0.75
+        },
+        "kc_source": "FAO-56 Table 12",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.2,
+          "optimal_min": 5.0,
+          "optimal_max": 6.2,
+          "absolute_max": 8.5
+        },
+        "texture_optimal": [
+          "medium",
+          "organic"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "low"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 3.5,
+          "P2O5": 1.4,
+          "K2O": 5.5
+        },
+        "nitrogen_demand": "medium",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 20,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": false,
+      "fixation": null,
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.4,
+          "max": 0.6
+        },
+        "depth_class": "shallow",
+        "type": "taproot",
+        "source": "FAO-56 Table 22"
+      },
+      "residue": {
+        "residue_to_product_ratio": 0.2,
+        "green_manure": false,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "High value where markets exist"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 4
+      },
+      "pest_disease_considerations": [
+        "Late blight, bacterial wilt, cyst and root-knot nematodes shared with tomato"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Brouwer & Heibloem (1986) FAO Irrigation Water Management Training Manual 3 – seasonal crop water needs",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Potato"
+    },
+    {
+      "slug": "sunn_hemp",
+      "crop_name": "Sunn hemp (green manure)",
+      "scientific_name": "Crotalaria juncea L.",
+      "crop_family": "Fabaceae",
+      "category": "cover_crop",
+      "duration": {
+        "typical_days": 60,
+        "ecocrop_min_days": 60,
+        "ecocrop_max_days": 160
+      },
+      "planting_season": "Short warm-season fallow window",
+      "harvest_period": "About 60 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 4.0,
+          "optimal_min": 20.0,
+          "optimal_max": 29.0,
+          "absolute_max": 40.0
+        },
+        "killing_temperature_c": -2.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 400.0,
+          "optimal_min": 600.0,
+          "optimal_max": 1500.0,
+          "absolute_max": 4300.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": null,
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.05,
+          "end": 0.5
+        },
+        "kc_source": "assumed (generic legume values)",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 5.0,
+          "optimal_min": 6.0,
+          "optimal_max": 7.0,
+          "absolute_max": 8.4
+        },
+        "texture_optimal": [
+          "medium"
+        ],
+        "texture_range": [
+          "light",
+          "medium"
+        ],
+        "drainage_optimal": [
+          "well"
+        ],
+        "drainage_range": [
+          "well",
+          "excessively"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 0,
+          "P2O5": 0,
+          "K2O": 0
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 4.0,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.7,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 40,
+          "residue_retained": 70
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 1.0,
+          "max": 1.5
+        },
+        "depth_class": "deep",
+        "type": "taproot",
+        "source": "assumed"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.0,
+        "green_manure": true,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Incorporated at flowering as green manure",
+          "Rapid ground cover suppresses weeds"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Generally low; can host some root-knot nematode races"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Sunn hemp"
+    },
+    {
+      "slug": "dhaincha",
+      "crop_name": "Dhaincha (Sesbania, green manure)",
+      "scientific_name": "Sesbania bispinosa (Jacq.)",
+      "crop_family": "Fabaceae",
+      "category": "cover_crop",
+      "duration": {
+        "typical_days": 50,
+        "ecocrop_min_days": 60,
+        "ecocrop_max_days": 170
+      },
+      "planting_season": "Short warm-season window, often before transplanted rice",
+      "harvest_period": "About 50 days after sowing (variety dependent)",
+      "climate_requirements": {
+        "temperature_c": {
+          "absolute_min": 10.0,
+          "optimal_min": 18.0,
+          "optimal_max": 30.0,
+          "absolute_max": 34.0
+        },
+        "killing_temperature_c": 0.0,
+        "annual_rainfall_mm": {
+          "absolute_min": 550.0,
+          "optimal_min": 700.0,
+          "optimal_max": 1100.0,
+          "absolute_max": 2900.0
+        }
+      },
+      "water_requirement": {
+        "fao_seasonal_mm": null,
+        "kc": {
+          "ini": 0.4,
+          "mid": 1.05,
+          "end": 0.5
+        },
+        "kc_source": "assumed (generic legume values)",
+        "requires_standing_water": false
+      },
+      "soil_preferences": {
+        "ph": {
+          "absolute_min": 4.3,
+          "optimal_min": 5.5,
+          "optimal_max": 7.0,
+          "absolute_max": 9.9
+        },
+        "texture_optimal": [
+          "medium",
+          "heavy"
+        ],
+        "texture_range": [
+          "wide"
+        ],
+        "drainage_optimal": [
+          "imperfectly",
+          "well"
+        ],
+        "drainage_range": [
+          "imperfectly",
+          "well"
+        ],
+        "fertility_requirement": "moderate",
+        "salinity_tolerance": "moderate"
+      },
+      "nutrient_requirements": {
+        "removal_kg_per_t": {
+          "N": 0,
+          "P2O5": 0,
+          "K2O": 0
+        },
+        "nitrogen_demand": "low",
+        "nitrogen_demand_basis": "Legumes: low (largely self-supplied by fixation). Others: N removed in harvested product at the reference yield (<35 low, 35–70 medium, >70 kg N/ha high)",
+        "reference_yield_t_ha": 4.0,
+        "coefficients_status": "indicative"
+      },
+      "nitrogen_fixation": true,
+      "fixation": {
+        "ndfa_fraction": 0.7,
+        "residual_n_credit_kg_ha": {
+          "residue_removed": 40,
+          "residue_retained": 70
+        }
+      },
+      "root_characteristics": {
+        "max_depth_m": {
+          "min": 0.8,
+          "max": 1.2
+        },
+        "depth_class": "medium",
+        "type": "taproot",
+        "source": "assumed"
+      },
+      "residue": {
+        "residue_to_product_ratio": 1.0,
+        "green_manure": true,
+        "carbon_fraction": 0.45
+      },
+      "rotation": {
+        "potential_benefits": [
+          "Tolerates waterlogging and moderate salinity",
+          "Green manure before rice"
+        ],
+        "min_break_seasons_same_crop": 1,
+        "min_break_seasons_same_family": 1
+      },
+      "pest_disease_considerations": [
+        "Generally low"
+      ],
+      "geographic_suitability": "Global ECOCROP ranges; actual suitability is assessed per farm from local climate, soil and water conditions.",
+      "sources": [
+        "FAO ECOCROP database via Recocrop R package (Hijmans) – temperature, rainfall, pH, texture, drainage",
+        "Allen et al. (1998) FAO Irrigation & Drainage Paper 56, Tables 12 (Kc) and 22 (rooting depth)",
+        "Indicative model coefficients (nutrient removal: IPNI/IFA removal tables; residue ratios; %Ndfa: Herridge et al. 2008; residual N credits: Peoples et al. 2009) – calibrate locally"
+      ],
+      "ecocrop_entry": "Danicha *"
+    }
+  ]
+}

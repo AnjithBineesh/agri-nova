@@ -1,0 +1,59 @@
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/manrope/800.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+body {
+  @apply bg-paper text-ink font-sans;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 { @apply font-display text-ink; letter-spacing: -0.02em; }
+
+:focus-visible { outline: 2px solid #2f6fa8; outline-offset: 2px; }
+
+@layer components {
+  /* Italic serif accent used for one emphasised phrase in key headings (brand style). */
+  .accent { @apply font-serif font-normal italic tracking-normal; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply btn bg-forest text-white hover:bg-forest-700; }
+  .btn-lime { @apply btn bg-lime text-forest hover:bg-lime-600; }
+  .btn-leaf { @apply btn bg-lime text-forest hover:bg-lime-600; }
+  .btn-secondary { @apply btn border border-line bg-white text-ink hover:border-forest/30; }
+  .btn-ghost { @apply btn text-ink-soft hover:bg-white hover:text-ink; }
+  .btn-glass { @apply btn border border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20; }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:border-orbit focus:outline-none focus:ring-2 focus:ring-orbit/20 disabled:bg-paper;
+  }
+  .label { @apply mb-1.5 block text-sm font-semibold text-ink; }
+  .hint { @apply mt-1 text-xs text-ink-faint; }
+  .panel { @apply rounded-panel border border-line/80 bg-white shadow-soft; }
+  .panel-pad { @apply p-6; }
+  .tag { @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1 text-xs font-semibold text-ink-soft; }
+  .page-title { @apply font-display text-[28px] font-bold leading-tight text-ink sm:text-[34px]; }
+  .section-title { @apply font-display text-lg font-bold text-ink; }
+  .table-base { @apply w-full text-left text-sm; }
+  .table-base th { @apply border-b border-line px-3 py-2.5 text-xs font-semibold text-ink-soft; }
+  .table-base td { @apply border-b border-line/70 px-3 py-2.5 align-top; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+.leaflet-container { font-family: inherit; }
